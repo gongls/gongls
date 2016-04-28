@@ -29,8 +29,18 @@ router.put('/blog/:id', function(req, res, next) {
 });
 
 router.delete('/blog/:id', function(req, res, next) {
+  if (req.session.user){
+
+  }
   var id=req.params.id;
   res.send('delete blog id:'+id);
+});
+
+
+router.get('/logout', function(req, res, next) {
+  req.session.destroy(function (err) {
+      res.redirect('/');
+  });
 });
 
 

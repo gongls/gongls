@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/add', function(req, res, next) {
-  res.render('blog_add', { title: '',dir:'blog/add' });
+  res.render('blog_add', { title: '',dir:req.originalUrl});
   console.log(req);
 });
 
