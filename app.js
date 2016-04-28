@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-
+var config = require('./config/config');
+var db = require('./lib/db');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var wx = require('./routes/wx');
@@ -32,8 +33,41 @@ app.use(session({
     secret: 'loginSession',
     store: new MongoStore({url: 'mongodb://localhost/db'})
 }));
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function (req, res, next) {
+  console.log(req.path);
+
+  if(config.is_insert_views){
+    function getClientIp(req) {
+        return req.headers['x-forwarded-for'] ||
+            req.connection.remoteAddress ||
+            req.socket.remoteAddress ||
+            req.connection.socket.remoteAddress;
+    }
+    req.client_ip=getClientIp(req);
+    var can_insert=true;
+    config.unviews.map(function(k){
+      if(req.path.includes("/"+k)){
+        can_insert=false;
+      }
+    });
+    if(can_insert){
+        db.create('views', {
+            host: req.headers.host,
+            ip: getClientIp(req),
+            ua: req.headers['user-agent'],
+            url: req.url,
+            method: req.method,
+            time: Date()
+        }, function () {
+        }); 
+    }
+  }  
+  next();
+});
+
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/wx', wx);
