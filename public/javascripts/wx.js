@@ -26,7 +26,7 @@ $(document).ready(function(){
     share={
         title:document.title,
         link:url,
-        imgUrl:'http://h5.gongls.com/images/logo.png',
+        imgUrl:'http://www.gongls.com/images/logo.png',
         desc:'',
         success:function(){
 
