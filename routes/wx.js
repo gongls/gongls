@@ -72,7 +72,7 @@ router.post('/', function(req, res, next) {
           };
 
 
-          db.add('msgs',msg_data,function(){});
+          db.create('msgs',msg_data,function(){});
 
           var xml =  builder.buildObject(json);
           res.setHeader('Content-Type', 'text/xml');

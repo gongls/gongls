@@ -1,0 +1,24 @@
+{
+  "name": "gongls",
+  "description": "gongls",
+  "main": "app.js",
+  "authors": [
+    "gongls"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gongls/gongls",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "^0.5.9",
+    "less": "^2.7.1",
+    "vue": "^1.0.22",
+    "vue-router": "^0.7.13"
+  }
+}

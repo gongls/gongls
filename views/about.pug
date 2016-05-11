@@ -1,0 +1,21 @@
+extends layout.pug
+block content
+  h1= title
+  p Welcome to #{title}
+  button(v-link="{ path: '/a' }").btn.btn-raised.btn-primary a
+  button(v-link="{ path: '/b' }").btn.btn-raised.btn-primary b
+  button(v-link="{ path: '/c' }").btn.btn-raised.btn-primary c
+  <router-view></router-view>
+  h3 本站使用如下技术
+  p 服务器：ubuntu server
+  p 基于 on node.js 技术构建
+  p 使用了如下技术：
+  p 1) 后端框架：express
+  p 2) 数据库：mongodb
+  p 3) 模板引擎：pug ( 原名jade ) 
+  p 4) 前端路由：vue-router
+  p 5) 前端框架：vue.js / jquery.js
+  p 6) UI/style：bootstrap / bootstrap-material-design
+  input(v-model="message").form-control(type="text")
+  ul.list-group
+    li.list-group-item Cras justo odio

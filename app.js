@@ -8,13 +8,11 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var config = require('./config/config');
 var db = require('./lib/db');
-var routes = require('./routes/index');
-var users = require('./routes/users');
+
 var wx = require('./routes/wx');
+var pages = require('./routes/pages');
+var apis = require('./routes/apis');
 var test = require('./routes/test');
-var dashboard = require('./routes/dashboard');
-var blog = require('./routes/blog');
-var api = require('./routes/api');
 
 var app = express();
 
@@ -66,15 +64,14 @@ app.use(function (req, res, next) {
   next();
 });
 
-//app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, '')));
-app.use('/', routes);
-app.use('/users', users);
+//app.use('/', routes);
+//app.use('/users', users);
 app.use('/wx', wx);
+app.use('/api', apis);
+app.use('/', pages);
 app.use('/test', test);
-app.use('/dashboard', dashboard);
-app.use('/blog', blog);
-app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -101,10 +98,18 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+  if(res.status===404){
+    res.render('404', {
+      message: err.message,
+      error: err,
+      title:404
+    });
+  }else{
+    res.render('error', {
+      message: err.message,
+      error: {}
+    });
+  }
 });
 
 
