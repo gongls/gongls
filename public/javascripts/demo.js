@@ -3,7 +3,7 @@ $(document).ready(function(){
 		template: '<div class="form-group">'+
 				'<p @click="doSomething">{{ message.length }}/20 {{msg}}</p>'+
 				'<input maxlength="20" class="form-control" v-model="message">'+
-				'<button class="btn btn-primary">ok</button>'+
+				'<button class="btn btn-raised btn-info">ok</button>'+
 			    '</div>',
 		data: function () {
 	                return { 
