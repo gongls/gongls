@@ -181,7 +181,9 @@ TimeLine.prototype={
     });
   },
   drawline:function(line,color){
-
+    if(color===undefined){
+      color=this.colors[0];
+    }
     var time_count=this.time_count;//时间数量
     var every_width=this.every_width;//时间间隔长度
     var start_time=this.start_time;
