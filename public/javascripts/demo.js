@@ -50,7 +50,24 @@ $(document).ready(function(){
 		                   //绘制线
 		                   timeline.drawlines(this.json);
 		                   //绘制症状区域
-		                   //timeline.text_areas(Symptoms);
+		                   timeline.text_areas([
+    {
+      "name":"摔东西",
+      "desc":"发作起来什么都砸",
+      "time_area":{
+        "start_time":"2016-05-03",
+        "end_time":"2016-05-10"
+      }
+    },
+    {
+      "name":"发飙",
+      "desc":"见到谁都跟喷火壶一样",
+      "time_area":{
+        "start_time":"2016-05-15",
+        "end_time":"2016-05-29"
+      }
+    }
+  ]);
 	                }
 	              },
 	             watch: {

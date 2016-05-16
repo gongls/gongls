@@ -1,12 +1,37 @@
 //天数差 计算方法：
-Date.DateDiff=function(sDate1,  sDate2){    //sDate1和sDate2是2002-12-18格式
-    var  aDate,  oDate1,  oDate2,  iDays
-    aDate  =  sDate1.split("-")
-    oDate1  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])    //转换为12-18-2002格式
-    aDate  =  sDate2.split("-")
-    oDate2  =  new  Date(aDate[1]  +  '-'  +  aDate[2]  +  '-'  +  aDate[0])
-    iDays  =  parseInt(Math.abs(oDate1  -  oDate2)  /  1000  /  60  /  60  /24)    //把相差的毫秒数转换为天数
-    return  iDays;
+
+
+
+Date.DateDiff=function(startTime, endTime){    //sDate1和sDate2是2002-12-18格式
+    function GetDateDiff(startTime, endTime, diffType) {
+      //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式 
+      startTime = startTime.replace(/\-/g, "/");
+      endTime = endTime.replace(/\-/g, "/");
+      //将计算间隔类性字符转换为小写
+      diffType = diffType.toLowerCase();
+      var sTime = new Date(startTime);      //开始时间
+      var eTime = new Date(endTime);  //结束时间
+      //作为除数的数字
+      var divNum = 1;
+      switch (diffType) {
+          case "second":
+              divNum = 1000;
+              break;
+          case "minute":
+              divNum = 1000 * 60;
+              break;
+          case "hour":
+              divNum = 1000 * 3600;
+              break;
+          case "day":
+              divNum = 1000 * 3600 * 24;
+              break;
+          default:
+              break;
+      }
+      return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
+  }
+  return Math.abs(GetDateDiff(startTime, endTime,'day'));
 }
 //日期 加法
 Date.addDate=function(date,days){
@@ -46,7 +71,8 @@ TimeLine.prototype={
     //初始化画布  宽度 高度 padding 间距 canvas元素id
     console.log('初始化timeline');
     var canvas = document.getElementById(canvas_el_id);
-    console.log(canvas);
+    console.log(canvas_el_id);
+
     canvas.width = width;
     canvas.height = height;
     this.timeline_width=width-padding-padding;//线的长度 等于 width 减去 两个 padding
@@ -79,6 +105,7 @@ TimeLine.prototype={
   },
   //绘制坐标线 开始时间，结束时间，时间间隔
   coordinate:function(start_time,end_time,time_intervals){
+
     this.start_time=start_time;
     this.end_time=end_time;
     var timeline_width=this.timeline_width;
@@ -105,6 +132,7 @@ TimeLine.prototype={
     c.stroke();
     c.closePath();
     //绘制左端竖线结束
+
     //绘制 中间的线 开始
     console.log(padding,height/2);
     c.beginPath();
@@ -118,9 +146,11 @@ TimeLine.prototype={
     //绘制时间节点
     //绘制时间线上的时间节点
     //获得天数 1年365天
+
     var begin_day=start_time;//开始日期
     var end_day=end_time;//结束日期
     var days=Date.DateDiff(end_day,begin_day);//一共多少天？
+
     console.log('days:'+days);
     var day_width=timeline_width/days;//每天 的距离
 
@@ -129,6 +159,7 @@ TimeLine.prototype={
     if(days<=7){
         day_padding=1;//一周之内 时间间隔为1
     }
+
     for(i=0;i<days+1;i++){
         console.log(i);
         c.beginPath();
@@ -161,19 +192,7 @@ TimeLine.prototype={
     //
   },
   drawlines:function(lines){
-    /*
-    line={
-      name:"",
-      time_points:[
-        time:"2012",
-        value:5
-      ]
-    }
-    lines=[
-     line,line
-    ]
-    */
-    let _self = this;
+    var _self = this;
     console.log('colors',this.colors);
     lines.map(function(line,index){
       console.log(_self.colors);
@@ -295,7 +314,7 @@ TimeLine.prototype={
     //
   },
   text_areas:function(areas){
-    let _self=this;
+    var _self=this;
     areas.map(function(area){
       _self.text_area(area);
     });
