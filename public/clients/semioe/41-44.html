@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>授权/删除</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();
+	var photobar=$(".photo-bar").height();		
+	$(".main-con").css("height",map_height-topfix-bottomfix-photobar);
+	$("ul.tab-bd li").css("height",map_height-topfix-bottomfix-photobar)
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper author-del">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">佐藤秀中</h1>
+        <a href="javascript:void(0)" class="oper-tit">授权</a> 
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+<!--头像显示区域start-->
+<div class="photo-bar doctor-photo-bar">
+	<div class="photo-con">
+		<img src="images/doctor-photo2.jpg"/>
+		<span class="f-48">佐藤秀中</span>
+	</div>
+	<img class="photo-blur" src="images/doctor-photo2.jpg" />
+</div>
+<!--头像显示区域end-->
+<!--主体内容-->
+<div class="main-con bg-white">
+	<!--基本信息start-->
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-7bc7c3">
+			<i class="left-icon doctor-icon-weizhi"></i>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+			<div class="med-des-text f-48">
+				北京军区总医院
+			</div>
+		</div>
+	</div>
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-62bbb7">
+			<i class="left-icon doctor-icon-keshi"></i>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+			<div class="med-des-text f-48">
+				头颈外科
+			</div>
+		</div>
+	</div>
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-7bc7c3">
+			<i class="left-icon doctor-icon-zhicheng"></i>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+			<div class="med-des-text f-48">
+				主任医师 | 副教授
+			</div>
+		</div>
+	</div>
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-62bbb7">
+			<i class="left-icon doctor-icon-jineng"></i>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+			<div class="med-des-text f-48">
+			头颈部肿瘤的鉴别诊断和手术治疗，尤其擅长扁桃体、口咽、喉咽、神经鞘瘤的根治与功能保存手术。
+			</div>
+		</div>
+	</div>
+
+	<!--基本信息end-->
+	
+	<!--医生简介start-->
+	<h2 class="lable-tit f-48">医生简介</h2>	
+	<div class="doctor-des pd-40 bg-gray-f9f9f9">
+		<p>
+			复旦大学附属肿瘤医院荣誉教授，擅长头颈部肿瘤的鉴别诊断和手术治疗，尤其擅长扁桃体、口咽、喉咽、神经鞘瘤的根治与功能保存手术。从医50余年，有丰富的经验。“舌骨下肌皮瓣的创新与在口腔、颌面、扁桃体根治的应用”1997年获国家科技进步三等奖。
+		</p>
+		<p>
+			教学职称 ：教授擅长疾病 ：头颈部肿瘤的鉴别诊断和手术治疗，尤其擅长扁桃体、口咽、喉咽、神经鞘瘤的根治与功能保存手术。荣誉成就 ：“舌骨下肌皮瓣的创新与在口腔、颌面、扁桃体根治的应用”1997年获国家科技进步三等奖。
+		</p>
+	</div>
+	<!--医生简介end-->
+	<a href="" class="btn-add normalbtn-orange f-48">
+		删除好友
+	</a>
+	
+</div>
+<!--主体内容end-->
+
+
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<!--提示层弹出start-->
+<div class="layer-info hidden">
+	<h1 class="f-48">您已经成功授权</h1>
+	<p class="f-42">
+		佐藤秀中医生将监控您的健康指标。如不需要，解除医生授权即可阻止医生监控。
+	</p>
+	<a href="javascript:void(0)" class="info-ok f-48 normalbtn-blue">知道了</a>
+</div>
+<!--提示层弹出end-->
+
+<!--询问层弹出start-->
+<div class="layer-confrim hidden">
+	<h1 class="f-48">您确定要解除授权</h1>
+	<p class="f-42">
+		解除授权后，该医生将无法监控您的信息，如果需要该医生继续监控请对其授权。
+	</p>	
+	<div class="flex-tab">
+		<div class="flex-tab-cell">
+			<a href="javascript:void(0)" class="confirm-ok f-48 normalbtn-blue">确定</a>
+		</div>
+		<div class="flex-tab-cell">
+			<a href="javascript:void(0)" class="confirm-cancle f-48 normalbtn-green">取消</a>
+		</div>
+	</div>
+</div>
+<!--询问层弹出end-->
+
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/common.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	});
+	
+	//解除与授权
+	$(".author-del .oper-tit").click(function(){
+		if($(this).text()=='授权'){	
+			$(this).removeClass("re-author");
+			$(this).addClass("set-author");
+			layer.open({
+			  type: 1,
+			  title: false,
+			  closeBtn: 0,
+			  shade: 0.6,
+			  area: '960px',
+			  offset: 'auto',
+			  skin: 'layui-layer-nobg', //没有背景色
+			  shadeClose: false,
+			  shift:2,
+			  content: $('.layer-info')
+			});	
+			
+		}else{
+			$(this).removeClass("set-author");
+			$(this).addClass("re-author");
+			layer.open({
+			  type: 1,
+			  title: false,
+			  closeBtn: 0,
+			  shade: 0.6,
+			  area: '960px',
+			  offset: 'auto',
+			  skin: 'layui-layer-nobg', //没有背景色
+			  shadeClose: true,
+			  shift:2,
+			  content: $('.layer-confrim')
+			});	
+		}
+	});
+	
+	
+	$(".info-ok").click(function(){
+		$(".author-del .oper-tit").text('解除授权');
+		layer.closeAll();
+	});
+	
+	$(".confirm-ok").click(function(){
+		$(".author-del .oper-tit").text('授权');
+		layer.closeAll();
+	});
+	
+	$(".confirm-cancle").click(function(){
+		layer.closeAll();
+	});
+	
+})
+</script>
+
+</body>
+</html>

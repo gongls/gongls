@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=0.4, maximum-scale=0.4, user-scalable=no" name="viewport" />
+	<title>监测数据</title>
+<link rel="stylesheet" href="css/data3.4.css" />
+</head>
+<style>
+#select {
+	font-size: 70px;
+	width: 220px;
+	height: 80px;
+	background-color: #1f555f;
+	color: white;
+	border: 0px;
+	padding-right: 15px;
+	background-image: url(img/pageicon-next.png);
+	background-repeat: no-repeat;
+	background-position:100% 50%;
+	appearance:none;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}
+</style>
+<body>
+<div class="">
+
+	<div class="top">
+		<div class="" style="text-align: center;margin-top: 35px;">
+	    	<select style="" id="select">
+				<option selected="selected" style="font-size: 20px;">血糖</option>
+				<option value="2" style="font-size: 20px;">2</option>
+				<option value="3" style="font-size: 20px;">3</option>
+	    	</select>
+		</div>
+		<div class="top_img_left" id="tiao">
+			<img src="img/data31-1.png">
+		</div>
+		<div class="top_img">
+			<img src="img/data35-1.png" class="img_left" id="img1" style="width: 58px;">
+			<img src="img/data3-2.png" id="img2">
+		</div>
+		<div class="nav">
+			<div class="nav_day nav_color nav_yuan1">
+				<p>日</p>
+			</div>
+			<div class="nav_day nav_color2">
+				<p>周</p>
+			</div>
+			<div class="nav_day nav_color nav_yuan2">
+				<p>年</p>
+			</div>
+		</div>
+		<div class="map" id="container">
+			
+		</div>
+	</div>
+	
+	<div class="footer">
+		<img src="img/data3-5.png" class="footer_img"/>
+	</div>
+	
+	<div class="content" style="background: -webkit-linear-gradient(left bottom,#0d605d,#00aca5);">
+		
+		<div class="content_head" >
+			<p class="p1 zhong">7.9</p>
+			<p class="p4 zhong">mmoL/L</p>
+			
+			<div class="content_body" >
+			<div class="content_body_hang">
+				<div class="content_text content_body_hang_border" >
+					<div class="content_text_border_left">
+						<p class="p2">空腹血糖均值</p>
+						<a class="p3">6.7</a><a class="p4">mmoL/L</a><a class="p5">偏高</a>
+					</div>
+				</div>
+				<div class="content_text" >
+					<div class="content_text_border_right">
+						<p class="p2">空腹血糖均值</p>
+						<a class="p3">6.7</a><a class="p4">mmoL/L</a><a class="p5">偏高</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="content_body_hang">
+				<div class="content_text content_body_hang_border" >
+					<div class="content_text_border_left">
+						<p class="p2">空腹血糖均值</p>
+						<a class="p3">6.7</a><a class="p4">mmoL/L</a><a class="p5">偏高</a>
+					</div>
+				</div>
+				<div class="content_text">
+					<div class="content_text_border_right">
+						<p class="p2">空腹血糖均值</p>
+						<a class="p3">6.7</a><a class="p4">mmoL/L</a><a class="p5">偏高</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/highcharts.js" ></script>
+<script>
+$("#img1").click(function(){
+	$(this).attr("src","img/data35-2.png")
+})
+
+$("#img2").click(function(){
+	$(this).attr("src","img/data3-2-click.png")
+})
+
+$(".nav_day").click(function(){
+	$(".nav_color").css("background-color","#013132");
+	$(".nav").css("border","0px");
+})
+
+$("#select").click(function(){
+	$(this).css("color","#666666");
+	$(this).css("background-image","url(img/pageicon-next1.png)");
+	location.href="data3.4_shaixuan.html";
+})
+
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        legend:{//
+        	enabled:false
+        },
+        credits: { 
+            enabled: false   //不显示LOGO 
+        },
+       xAxis: {
+            categories: [//表格下部值
+                '周一',
+                '周二',
+                '周三',
+                '周四',
+                '周五',
+                '周六',
+                '周日',
+            ],
+            labels:{
+            	enabled:true
+            },
+            opposite: false  //显示在Y轴右侧，通常为false时，左边显示Y轴，下边显示X轴 
+        },
+        yAxis: {
+        	title: {
+	            text: '.'
+	        },
+            categories: [//表格下部值
+                '严重',
+                '偏重',
+                '较差',
+                '良好',
+                '健康',
+            ],
+            labels: {
+            	enabled:true
+            },
+            opposite: false  //显示在Y轴右侧，通常为false时，左边显示Y轴，下边显示X轴 
+        },
+        plotOptions: {
+            area: {
+                lineWidth: 13,
+                lineColor: "#2ac7c1",
+            },
+        },
+        tooltip: {
+            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+        },
+        series: [{
+            name: 'USA',
+            color:"#2a5e66",
+            data: [ 1, 2, 2, 3, 3, 4,4]
+        }]
+    });
+});   
+
+//表格 x y 轴样式
+Highcharts.theme = {
+	colors: ['red'],//柱状条颜色
+	chart: {//表格
+		backgroundColor: {
+			linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+			stops: [
+				[0, '#1f555f'],//表格天蓝色[0, '#0daeee']
+				[1, '#1f555f'],//表格天蓝色[1, '#0daeee']
+			]
+		},
+		borderWidth: 0,
+		plotBackgroundColor: 'rgba(0, 159, 255, 0)',//表格背景色
+		plotShadow: false,
+		plotBorderWidth: 0
+	},
+	xAxis: {
+		gridLineWidth: 0,//x 轴竖线
+		lineColor: '#1f555f',//边条颜色
+		tickColor: '#1f555f',//角标颜色
+		labels: {
+			style: {
+				color: 'white',
+				font: '40px Trebuchet MS, Verdana, sans-serif'
+			}
+		},
+	},
+	yAxis: {
+		gridLineWidth: 0,//x 轴竖线
+		//minorTickInterval: 'auto', //网格
+		lineColor: '#1f555f',//边条颜色
+		tickColor: '#1f555f',//角标颜色
+		lineWidth: 1,//边条粗度
+		tickWidth: 1,//角标粗度
+		labels: {
+			style: {
+				color: 'white',
+				font: '40px Trebuchet MS, Verdana, sans-serif'
+			}
+		},
+	},
+
+};
+
+var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+
+$("#tiao").click(function(){
+	location.href="data3.0.html";
+})
+</script>

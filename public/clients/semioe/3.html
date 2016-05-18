@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>忘记密码</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	$(".main-con").css("height",map_height-topfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper re-password">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+                    
+    </div>
+</div>
+<!--顶部标题操作栏end-->
+<!--主体内容-->
+<div class="main-con">
+	<div class="psw-form">
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-01"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="text" name="" id="" value="詹姆斯" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-02"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="text" name="" id="" value="230826199104280645" />
+				</div>
+			</div>
+		</div>	
+		
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-03"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="text" name="" id="" value="18301035097" />
+				</div>
+			</div>
+		</div>	
+		
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-04"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48 touch-input" type="text"  value=""  readonly="true"/>
+				</div>
+			</div>
+			<input  class="f-42 toucharea slidebtn-blue" type="button" value="右滑发送验证码">
+			<img class="touch-arrow" src="images/touch-arrow.png" />
+		</div>	
+		
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-05"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="password" name=""  id="" value="6666666666" />
+				</div>
+			</div>
+		</div>	
+		
+		<div class="form-row">
+			<div class="flex-tab form-row-con">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-06"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="password" name="" id="" value="6666666666" />
+				</div>
+			</div>
+		</div>	
+		
+		<a href="1.html" class="btn-orange f-48">
+			保 存
+		</a>
+		
+	</div><!--psw-form-->
+</div><!--main-con-->
+<!--主体内容end-->
+</div><!--app-wrapper-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/mobile.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	$(".toucharea").on("swiperight", function() {
+		$(this).addClass('toucharea-selected');
+		$(".touch-input").attr("readonly",false);
+		var countdown=60; 
+			function settime(obj) { 
+			    if (countdown == 0) { 
+			        obj.removeAttribute("disabled");    
+			        obj.value="获取验证码"; 
+			        countdown = 60; 
+			        return;
+			    } else { 
+			        obj.setAttribute("disabled", true); 
+			        obj.value= countdown + "秒后重新获取"; 
+			        countdown--; 
+			    } 
+			setTimeout(function() { 
+			    settime(obj) }
+			    ,1000) 
+			}
+			settime(this);
+			$(".toucharea").click(function(){
+				settime(this);
+			})
+	});
+	
+</script>
+</body>
+</html>

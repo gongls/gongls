@@ -1,0 +1,192 @@
+@font-face{
+	font-family: my1;
+	src: url('PingFang.ttf'); 
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/data3-0.png);
+}
+
+ul { 
+	padding-left: 0px;
+}
+	
+ul,li { 
+	list-style: none;
+}
+
+.top {
+	background-color: #275f69;
+	position: relative;
+	top: 0px;
+	width: 100%;
+	height: 180px;
+}
+
+.top p{
+	margin:0px;
+	padding:75px;
+	color: white;
+	font-size: 64px;
+	text-align: center;
+	font-family: my1;
+}
+
+.top_img{
+	position: absolute;
+	top: 85px;
+	right: 30px;
+}
+
+.img_left{
+	margin-right: 50px;
+}
+
+.nav {
+	font-size: 0px;
+	background-color: white;
+	height: 130px;
+	line-height: 130px;
+	margin-bottom: 100px;
+	
+}
+
+.nav li{
+	display:inline-block;
+	vertical-align:top;
+	font-size: 48px;
+	width: 33.33%;
+	text-align: center;
+}
+
+.nav p{
+	margin: 0px;
+	padding: 0px;
+	font-family: my1;
+}
+
+.active {
+	color: #275f69;
+	border-bottom: solid 5px #275f69;
+	height: 125px;
+}
+
+.content {
+	margin: 0 auto;
+	background-image: url(../img/data33-1.png);
+	background-repeat: no-repeat;
+	width: 660px;
+	height: 580px;
+	padding-top: 120px;
+}
+
+.content_one {
+	background-image: url(../img/data33-11.png);
+	background-size: 88%;
+    background-repeat: no-repeat;
+    background-position: center;
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	padding: 60px;
+	line-height: 300px;
+	text-align: center;
+	margin: auto;
+}
+
+.content p{
+	font-size: 70px;
+	color: white;
+	margin: 0px;
+	font-family: my1;
+	padding-right: 20px;
+}
+
+.content_two {
+	width: 75%;
+	height: 700px;
+	font-size: 0px;
+	margin: 0 auto;
+}
+
+.content_two_div {
+	width: 20%;
+	height: 300px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.zhanwei{
+	width: 20%;
+	height: 300px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.ju_z {
+	text-align: center;
+}
+
+.p1 {
+	margin: 0 auto;
+	padding-bottom: 20px;
+	color: #666666;
+	font-size: 30px;
+	font-family: my1;
+	border-bottom: 1px solid #666666;
+	width: 85px;
+}
+
+.p2 {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0px;
+	font-size: 90px;
+	font-family: my1;
+	color: #1c9be8;
+	
+}
+
+.p3 {
+	margin: 0 auto;
+	padding-top: 10px;
+	color: #666666;
+	font-size: 30px;
+	font-family: my1;
+	border-top: 1px solid #666666;
+	width: 85px;
+}
+
+.content_button {
+	height: 115px;
+	line-height: 115px;
+	width: 100%;
+	background-color: #439bd0;
+	margin: 7% auto;
+	text-align: center;
+}
+
+.content_button p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 52px;
+	color: white;
+	font-family: my1;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0px;
+	background-color: #275f69;
+	width: 100%;
+	height: 135px;
+	text-align: center;
+	line-height: 134px;
+}
+
+.footer_img{
+	vertical-align: middle;
+	height: 70px;
+}

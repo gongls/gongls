@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>主界面</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	$(".main-con").css("height",map_height-topfix);
+}
+</script>
+
+</head>
+<style>
+.index-nav a:active{
+	background-color: #62bbb7;
+}
+</style>
+<body>
+<div class="app-wrapper index">
+<!--主体内容-->
+<div class="main-con no-scroll">
+	<div class="index-nav-wrapper">
+	<div class="index-nav flexrow clearfix">
+		<div class="flexcol-3" style="">
+			<a href="5.html">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="25.html">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="data3.0.html">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="38.html">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="47.html">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="48.html">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+	</div>
+	</div>
+
+</div><!--main-con-->
+<!--主体内容end-->
+</div><!--app-wrapper-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+
+</body>
+</html>

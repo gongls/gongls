@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>设置-账号设置</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper setting-id">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">账户设置</h1> 
+        <a href="48.html" class="oper-tit">保存</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-white">
+	
+	<!--设置start-->
+	<div class="relation-con">
+		<div class="con-row flex-tab bg-gray-fdfdfd ">
+			<div class="flex-tab-cell  pd-40 ht-220 f-48 setting-tit">
+				账号
+			</div>
+			<div class="flex-tab-cell  pd-40 ht-220">
+				<input class="normal-input f-60 align-right"  type="text" name="" id="" value="18301035097" readonly="true" />
+			</div>	
+		</div>
+		<div class="con-row flex-tab bg-gray-f9f9f9">
+			<div class="flex-tab-cell  pd-40 ht-220  f-48 setting-tit">
+				修改密码
+			</div>
+			<div class="flex-tab-cell  pd-40 ht-220 ">
+				<input class="normal-input f-60 align-right  confirm-psw"  type="password" name="" id="" value="" readonly="true" />
+				<i class="edit-tip"></i>
+			</div>	
+		</div>
+		<div class="con-row flex-tab bg-gray-fdfdfd ">
+			<div class="flex-tab-cell  pd-40 ht-220  f-48 setting-tit">
+				QQ号码绑定
+			</div>
+			<div class="flex-tab-cell  pd-40 ht-220 ">
+				<input class="normal-input f-60 align-right"  type="text" name="" id="" value="784860777" />
+				<i class="edit-tip"></i>
+			</div>	
+		</div>
+		
+	</div>
+	<!--设置end-->
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<!--验证密码层弹出start-->
+<div class="layer-confrim hidden">
+	<h1 class="f-48">验证原密码</h1>
+	<h2 class="f-42">
+		为了您的数据安全，修改密码前请写原密码
+	</h2>
+	<p class="area-other">
+		<input class="spe-input f-42" type="password" name="" placeholder="密码" id="" value="" />
+	</p>	
+	<div class="flex-tab">
+		<div class="flex-tab-cell">
+			<a href="javascript:void(0)" class="confirm-ok f-48 normalbtn-blue">确定</a>
+		</div>
+		<div class="flex-tab-cell">
+			<a href="javascript:void(0)" class="confirm-cancle f-48 normalbtn-green">取消</a>
+		</div>
+	</div>
+</div>
+<!--验证密码层弹出end-->
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	});
+
+	//弹出验证密码
+	$(".confirm-psw").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '960px',
+		  offset: 'auto',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.layer-confrim')
+		});				
+	});
+	
+	$(".confirm-cancle").click(function(){
+		layer.closeAll();
+	});
+	
+})
+</script>
+</body>
+</html>

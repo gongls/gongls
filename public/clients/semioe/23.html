@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>用药记录-详情</title>
+
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/swiper.min.css"/>
+<link rel="stylesheet" href="css/photoswipe.css"/>
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper drugrecord-detail">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">用药记录</h1> 
+        <a href="" class="oper-tit">编辑</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-gray-fdfdfd">
+	
+	<!--用药记录01-->
+	<div class="record-con record-con01">
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-300 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">1</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<h1 class="f-48">伤口发炎</h1>
+				<h2 class="f-42">消炎药(每天三次)</h2>
+				<div class="">
+					<img src="images/audio01.png"/><!--录音插件区域-->
+				</div>
+			</div>
+		</div>		
+		
+		<!-- 记录01Swiper -->
+		<div class="image-swiper">
+			<div class="swiper-container">
+				<ul class="swiper-wrapper" id="Gallery">
+					<li class="swiper-slide">
+						<a href="images/med01.jpg"><img src="images/med01.jpg" alt="1/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med02.jpg"><img src="images/med02.jpg" alt="2/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med03.jpg"><img src="images/med03.jpg" alt="3/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med04.jpg"><img src="images/med04.jpg" alt="4/4" /></a>
+					</li>
+				</ul>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>	
+	<!--用药记录01end-->
+	
+	<!--用药记录02start-->
+	<div class="record-con record-con02">	
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-300 flex-tab-cell bg-green-62bbb7">
+				<span class="left-num f-80">2</span>
+			</div>
+			<div class="pd-40 flex-tab-cell f-48 bg-gray-f9f9f9">
+				<h1 class="f-48">糖尿病</h1>
+				<h2 class="f-42">每天两次,用量按照说明书成人剂量服用</h2>
+				<div class="">
+					<img src="images/audio02.png"/><!--录音插件区域-->
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<!-- 记录02Swiper -->
+		<div class="image-swiper">
+			<div class="swiper-container">
+				<ul class="swiper-wrapper" id="Gallery2">
+					<li class="swiper-slide">
+						<a href="images/med04.jpg"><img src="images/med04.jpg" alt="1/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med03.jpg"><img src="images/med03.jpg" alt="2/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med02.jpg"><img src="images/med02.jpg" alt="3/4" /></a>
+					</li>
+					<li class="swiper-slide">
+						<a href="images/med01.jpg"><img src="images/med01.jpg" alt="4/4" /></a>
+					</li>
+				</ul>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>	
+		</div>
+	</div>
+	<!--用药记录02end-->
+	
+	<a href="24.html" class="btn-add normalbtn-blue f-48">
+		<img align="absmiddle"   src="images/operate-icon-add.png" />添加
+	</a>
+</div>
+<!--主体内容end-->
+
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="js/klass.min.js"></script>	
+<script type="text/javascript" src="js/photoswipe.min.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	})
+})
+</script>
+
+<script>
+var swiper = new Swiper('.record-con01 .swiper-container', {
+        pagination: '.record-con01 .swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 3.22,
+        slidesPerGroup : 3,
+        spaceBetween : 20,		      
+    });
+var swiper = new Swiper('.record-con02 .swiper-container', {
+		pagination: '.record-con02 .swiper-pagination',
+        paginationClickable: true,
+        slidesPerView: 3.22,
+        slidesPerGroup : 3,
+        spaceBetween : 20,
+		
+    });    
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var myPhotoSwipe = $("#Gallery a").photoSwipe({loop:false,captionAndToolbarAutoHideDelay:0,fadeInSpeed:10  });
+	var myPhotoSwipe = $("#Gallery2 a").photoSwipe({loop:false,captionAndToolbarAutoHideDelay:0 ,fadeInSpeed:10  });
+});
+</script>
+</body>
+</html>

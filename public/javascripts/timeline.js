@@ -191,8 +191,36 @@ TimeLine.prototype={
     }
     //
   },
-  drawlines:function(lines){
+  setlines:function(lines){
+    //排序，获得开始时间和结束时间，更新 坐标系
+    var times=[];
+    lines.map(function(line,index,lines){
+      var time_points=line.time_points;
+
+      time_points.map(function(point){
+          times.push(point.time);//
+      });
+
+      time_points.sort(function(a,b){
+          return Date.parse(a.time) - Date.parse(b.time);//时间正序
+      });
+      lines[index]=line;
+    });
+
+    times.sort(function(a,b){
+          return Date.parse(a) - Date.parse(b);//时间正序
+    });
+
+    var begin_time=times[0];
+    var end_time=times[times.length-1];
+    
+    this.begin_time=begin_time;
+    this.end_time=end_time;
+    this.lines=lines;
+  },
+  drawlines:function(){
     var _self = this;
+    var lines=this.lines;
     console.log('colors',this.colors);
     lines.map(function(line,index){
       console.log(_self.colors);
@@ -236,7 +264,7 @@ TimeLine.prototype={
       var y=0;
 
       //计算单位高度
-      var every_height=timeline_height/max_value;
+      var every_height=(timeline_height-padding*2)/max_value;
       /*//计算单位宽度
       var time_count=Date.DateDiff(start_time,end_time);//时间数量
       var every_width=timeline_width/time_count;
@@ -251,7 +279,7 @@ TimeLine.prototype={
       console.log('时间：',time,start_time);
       x=this_time_index*every_width+padding;
       y=value*every_height;
-      y=timeline_height-y+padding;
+      y=timeline_height-y;
       //如果在 时间区间内
       if(this_time_index<=time_count){
         //加入时间点

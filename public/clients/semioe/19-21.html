@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>饮食习惯详情--编辑2</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	var operatebar=$(".operate-bar").height();
+	var touchheight=$(".touch-left").height();
+	$(".main-con").css("height",map_height-topfix-bottomfix-operatebar);
+	var touchbtnheight=$(".touch-btn").parent().height()+"px";
+	$(".touch-btn").css({"height":touchbtnheight,"line-height":touchbtnheight})
+}
+</script>
+</head>
+<body>
+<div class="app-wrapper eating-detail">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">饮食习惯</h1> 
+        <a href="17-18.html" class="oper-tit">保存</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--操作栏（删除，添加等）start-->
+<div class="operate-bar">
+	<a href="22.html" class="operate-bar-btn normalbtn-blue f-48">
+		<img align="absmiddle"   src="images/operate-icon-add.png" />添加
+	</a>	
+</div>
+<!--操作栏（删除，添加等）end-->
+
+<!--主体内容-->
+<div class="main-con bg-gray-fdfdfd">
+
+	<!--早餐start-->
+	<div class="eating-breakfast eating-con">
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">1</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-green-deeced">
+				<div class="med-des-text f-48">
+					早餐
+				</div>
+			</div>
+		</div>
+		
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-d1e5e4">
+				<i class="left-icon left-icon-edit"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-f6f6f6">
+				<input class="normal-input f-48" type="" name="" id="" value="面包/鸡蛋/牛奶/水果等低油脂食物"  placeholder="" />
+				<i class="edit-tip"></i>
+			</div>
+		</div>	
+		
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-e2ebeb">
+				<i class="left-icon left-icon-time"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell f-48 bg-gray-fdfdfd">
+				<select class="normal-select">
+					<option value="1">06:00之前</option>
+					<option value="2" selected="selected">06:00-08:00</option>
+					<option value="3">08:00之后</option>
+				</select>
+				<i class="edit-tip"></i>
+			</div>
+		</div>
+		
+		<!--touch层（左滑出现按钮）start-->
+		<div class="touch-wrapper" style="width:1080px;overflow: hidden;">		
+				<div class="touch-item con-row flex-tab" style="width:1500px;">
+					<div class="wd-180 ht-220 flex-tab-cell bg-green-d1e5e4">
+						<i class="left-icon left-icon-luyin"></i>
+					</div>
+					<div class="pd-40 flex-tab-cell bg-gray-f6f6f6">
+						<div class="">
+							<img src="images/audio03.png" />
+							<!--录音插件-->
+						</div>
+					</div>
+					
+					<div class="flex-tab-cell" style="width:240px">
+						<a class="touch-btn f-48 normalbtn-blue record-start" >
+							重新录音
+						</a>
+					</div>
+					<div class="flex-tab-cell" style="width:180px">
+						<a class="touch-btn f-48 normalbtn-orange" >
+							删除
+						</a>
+					</div>
+				</div>
+		</div>
+		<!--touch层（左滑出现按钮）end-->
+		
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-e2ebeb">
+				<i class="left-icon left-icon-image"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<div class="med-des-text f-48">
+					饮食图片
+				</div>
+			</div>
+		</div>
+		
+		<!--操作图片start-->
+		<div class="addimage">
+			<div class="flexrow clearfix">
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food01.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food02.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food03.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food04.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<a href="" class="img-upload"></a>	
+				</div>
+			</div>
+		</div>
+		<!--操作图片end-->		
+	</div>	
+	<!--早餐end-->
+
+	<!--午餐start-->
+	<div class="eating-lunch eating-con">	
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">2</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-green-deeced">
+				<div class="med-des-text f-48">
+					午餐
+				</div>
+			</div>
+		</div>
+		
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-d1e5e4">
+				<i class="left-icon left-icon-edit"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-f6f6f6">
+				<input class="normal-input f-48" type="" name="" id="" value="沙拉/三明治/牛排/咖啡/面条"  placeholder="" />
+				<i class="edit-tip"></i>
+			</div>
+		</div>	
+		
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-e2ebeb">
+				<i class="left-icon left-icon-time"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell f-48 bg-gray-fdfdfd">
+				<select class="normal-select">
+					<option value="1">12:00之前</option>
+					<option value="2" selected="selected">12:00-13:00</option>
+					<option value="3">13:00之后</option>
+				</select>
+				<i class="edit-tip"></i>
+			</div>
+		</div>
+		<!--touch层（左滑出现按钮）start-->
+		<div class="touch-wrapper" style="width:1080px;overflow: hidden;">		
+				<div class="touch-item con-row flex-tab" style="width:1500px;">
+					<div class="wd-180 ht-220 flex-tab-cell bg-green-d1e5e4">
+						<i class="left-icon left-icon-luyin"></i>
+					</div>
+					<div class="pd-40 flex-tab-cell bg-gray-f6f6f6">
+						<div class="">
+							<img src="images/audio01.png" />
+							<!--录音插件-->
+						</div>
+					</div>
+					
+					<div class="flex-tab-cell" style="width:240px">
+						<a class="touch-btn f-48 normalbtn-blue record-start" >
+							重新录音
+						</a>
+					</div>
+					<div class="flex-tab-cell" style="width:180px">
+						<a class="touch-btn f-48 normalbtn-orange" >
+							删除
+						</a>
+					</div>
+				</div>
+		</div>
+		<!--touch层（左滑出现按钮）end-->
+							
+
+		<!--操作图片start-->
+		<div class="addimage">
+			<div class="flexrow clearfix">
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food01.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<div class="image-con">
+						<img src="images/food02.jpg"/>
+						<a href="" class="tip-del"></a>
+					</div>
+				</div>
+				<div class="flexcol-3">
+					<a href="" class="img-upload"></a>	
+				</div>
+			</div>
+		</div>
+		<!--操作图片end-->			
+		
+	</div>	
+	<!--午餐end-->
+</div>
+<!--主体内容end-->
+
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<!--弹出开始录音界面statr-->
+<div class="record-wrapper">
+	<div class="record-time">
+		<img src="images/wave.png"/><span class="f-60">23:49</span><img src="images/wave.png"/>
+	</div>
+	
+	<div class="record-startbtn">
+		<a class="normalbtn-blue">
+		</a>
+	</div>
+	
+	<div class="flexrow clearfix">
+		<div class="flexcol-2">
+			<a class="record-ok f-48 normalbtn-blue">确定</a>
+		</div>
+		<div class="flexcol-2">
+			<a class="record-canle f-48 normalbtn-green">取消</a>
+		</div>
+	</div>
+</div>
+<!--弹出开始录音界面end-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/mobile.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	});
+	
+	//左滑touch事件
+	$(".touch-wrapper .touch-item").on("swipeleft",function(){
+        $(this).addClass('item-selected');
+
+    }).on("swiperight",function(){
+        $(this).removeClass('item-selected');
+    });
+    
+    //弹出录音层
+    $(".record-start").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.record-wrapper')
+		});				
+	});
+	
+	$(".record-canle").click(function(){
+		layer.closeAll();
+	})
+})
+</script>
+
+</body>
+</html>

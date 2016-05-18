@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>过敏原-删除</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper allergy-del">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">过敏源</h1> 
+        <a href="27.html" class="oper-tit">编辑</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-gray-fdfdfd">
+
+<!--过敏源列表start-->
+
+	<!--touch层（左滑出现按钮）start-->
+	<div class="touch-wrapper2" style="width:1080px;overflow: hidden;">
+		<div class="touch-item con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">1</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<h1 class="f-48">青霉素</h1>
+				<div class="med-des-text f-42">
+					显示为消化系统过敏反应，出现过敏性紫癜，以腹痛和便血。最开始出现呼吸道症状或皮肤瘙痒。
+				</div>
+			</div>
+	
+			<div class="flex-tab-cell" style="width:180px">
+				<a class="touch-btn f-48 normalbtn-orange">
+					删除
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--touch层（左滑出现按钮）end-->	
+
+	<!--touch层（左滑出现按钮）start-->
+	<div class="touch-wrapper2" style="width:1080px;overflow: hidden;">
+		<div class="touch-item con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-62bbb7">
+				<span class="left-num f-80">2</span>
+			</div>
+			<div class="allergy-des pd-40 flex-tab-cell bg-gray-f9f9f9">
+				<h1 class="f-48">芒果</h1>
+				<div class="med-des-text f-42">				
+					吃芒果后出现了口唇红肿皮疹等过敏症状，不仅又痒又痛，还出现了水疱，颈部，上肢，手背等部位出现水肿性红斑，斑丘疹，有烧灼感和不同程度的瘙痒。
+				</div>	
+			</div>
+	
+			<div class="flex-tab-cell" style="width:180px">
+				<a class="touch-btn f-48 normalbtn-orange">
+					删除
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--touch层（左滑出现按钮）end-->	
+
+	<!--touch层（左滑出现按钮）start-->
+	<div class="touch-wrapper2" style="width:1080px;overflow: hidden;">
+		<div class="touch-item con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">3</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<h1 class="f-48">头孢类抗生素</h1>
+				<div class="med-des-text f-42">
+					过敏性休克
+				</div>
+			</div>
+	
+			<div class="flex-tab-cell" style="width:180px">
+				<a class="touch-btn f-48 normalbtn-orange">
+					删除
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--touch层（左滑出现按钮）end-->	
+
+	<!--touch层（左滑出现按钮）start-->
+	<div class="touch-wrapper2" style="width:1080px;overflow: hidden;">
+		<div class="touch-item con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-62bbb7">
+				<span class="left-num f-80">4</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+				<h1 class="f-48">螃蟹</h1>
+				<div class="med-des-text f-42">
+					身上瘙痒症状，用手一挠，皮肤上就出现了大块的红色疙瘩，很快遍布全身，瘙痒难忍。严重时还会有恶心、腹泻等反应。
+				</div>
+			</div>
+	
+			<div class="flex-tab-cell" style="width:180px">
+				<a class="touch-btn f-48 normalbtn-orange">
+					删除
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--touch层（左滑出现按钮）end-->	
+
+<!--过敏源列表end-->
+	<a href="28.html" class="btn-add normalbtn-blue f-48">
+		<img align="absmiddle"   src="images/operate-icon-add.png" />添加
+	</a>
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/mobile.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	});
+	//左滑touch事件
+	$(".touch-wrapper2 .touch-item").on("swipeleft", function() {
+		$(this).addClass('item-selected');
+		$(this).find(".touch-btn").css({
+			"height": $(this).height(),
+			"line-height": $(this).height() + 'px'
+		});
+
+	}).on("swiperight", function() {
+		$(this).removeClass('item-selected');
+		$(this).find(".touch-btn").css({
+			"height": $(this).height(),
+			"line-height": $(this).height() + 'px'
+		});
+	})
+})
+</script>
+</body>
+</html>

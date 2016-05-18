@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>选填信息-个人疾病史详情</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper med-history-detail">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">个人疾病史</h1> 
+        <a href="10.html" class="oper-tit">编辑</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-white">
+	
+	<!--疾病史start-->
+	<div class="relation-con">
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<span class="left-num f-80">1</span>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<h1 class="f-48 normal-h1">先天性心脏病</h1>
+				<div class="med-des-text f-42">
+					经常感冒、反复呼吸道感染，因而患过肺炎。多汗，平时呼吸急促。口唇、指甲青紫或者哭闹或活动后青紫，杵状指趾。
+				</div>
+			</div>
+		</div>
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-62bbb7">
+				<span class="left-num f-80">2</span>
+			</div>
+			<div class="pd-40 flex-tab-cell f-48 bg-gray-f9f9f9">
+				<h1 class="f-48 normal-h1">糖尿病</h1>
+				<div class="med-des-text f-42">
+					糖尿病发病3年，注射胰岛素2年半。
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<a href="11.html" class="btn-add normalbtn-blue f-48">
+		<img align="absmiddle"   src="images/operate-icon-add.png" />添加
+	</a>
+	<!--疾病史end-->
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	})
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>设置-账号设置</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper setting-id">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">账户设置</h1> 
+        <a href="48.html" class="oper-tit">保存</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-white">
+	
+	<div class="con-row flex-tab" >
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-7bc7c3">
+			<span class="left-num f-80">1</span>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+			<a class="list-item-link f-48" href="#">账户设置</a>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-62bbb7">
+			<span class="left-num f-80">2</span>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+			<a class="list-item-link f-48" href="51.html">新消息设置</a>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-7bc7c3">
+			<span class="left-num f-80">3</span>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+			<a class="list-item-link f-48" href="">权限设置</a>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-62bbb7">
+			<span class="left-num f-80">4</span>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+			<a class="list-item-link f-48" href="">关于</a>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab">
+		<div class="wd-220 ht-220 flex-tab-cell bg-green-7bc7c3">
+			<span class="left-num f-80">5</span>
+		</div>
+		<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+			<a class="list-item-link f-48" href="">版本更新</a>
+		</div>
+	</div>
+
+	<!--设置列表end-->
+	
+	<a href="#" class="btn-exit normalbtn-orange f-48" id="f1">
+		退出登录
+	</a>
+	<!--设置end-->
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<!--验证密码层弹出start-->
+<div class="layer-confrim hidden" >
+	<p class="area-other" style="background-color: white;border-top-left-radius: 20px;border-top-right-radius: 20px;font-size: 40px;color: black;padding-top: 150px;padding-bottom: 150px;">
+		您确定要退出系统
+	</p>	
+	<div class="flex-tab">
+		<div class="flex-tab-cell">
+			<a href="1.html" class="confirm-ok f-48 normalbtn-blue">确定</a>
+		</div>
+		<div class="flex-tab-cell">
+			<a href="javascript:void(0)" class="confirm-cancle f-48 normalbtn-green">取消</a>
+		</div>
+	</div>
+</div>
+<!--验证密码层弹出end-->
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	});
+
+	//弹出验证密码
+	$("#f1").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '960px',
+		  offset: 'auto',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.layer-confrim')
+		});				
+	});
+	
+	$(".confirm-cancle").click(function(){
+		layer.closeAll();
+	});
+	
+})
+</script>
+</body>
+</html>

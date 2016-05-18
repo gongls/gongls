@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>登录</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	$(".main-con").css("height",map_height-topfix);
+}
+</script>
+
+</head>
+<style>
+.flex-tab .icon-weixin{
+	background-image: url(images/icon-weixin-hover1.png);
+}
+</style>
+<body>
+<div class="app-wrapper login">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+    </div>
+</div>
+<!--顶部标题操作栏end-->
+<!--主体内容-->
+<div class="main-con">
+	<!--logo-->
+	<div class="logo">
+	</div>
+	<!--表单-->
+	<div class="psw-form">
+		<div class="form-row">
+			<div class="flex-tab form-row-con ">
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-user"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="f-48" type="text" placeholder="手机号/身份证号" value="" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="flex-tab form-row-con iconfix" >
+				<div class="flex-tab-cell form-icon">
+					<i class="icon-psw"></i>
+				</div>
+				<div class="flex-tab-cell form-input">
+					<input class="touch-input f-48" type="password" placeholder="密码" value=""  />
+				</div>
+			</div>
+			<a href="3.html" class="f-42 toucharea-right slidebtn-blue">忘记密码</a>
+		</div>
+		
+		
+		<a href="4.html" class="btn-orange f-48">
+			登 录
+		</a>
+		
+		<h2>还没有账号？<a href="2.html" class="color-82fff0">立即注册</a></h2>
+		
+	</div><!--psw-form-->
+	
+	<!--第三方登录-->
+	<div class="other-login">
+		<h1></h1>
+		<div class="flex-tab">
+			<div class="flex-tab-cell">
+				<a class="icon-qq" href=""></a>
+			</div>
+			<div class="flex-tab-cell">
+				<a class="icon-weixin" href="#"></a>
+			</div>
+			<div class="flex-tab-cell">
+				<a class="icon-weibo" href=""></a>
+			</div>
+		</div>
+	</div>
+	
+</div><!--main-con-->
+<!--主体内容end-->
+</div><!--app-wrapper-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".login input").blur(function(){
+		if($(this).val()==""){
+			$(this).parent().parent(".form-row-con").removeClass("iconstyle");
+		}else{
+			$(this).parent().parent(".form-row-con").addClass("iconstyle");
+		}
+	})
+		
+	})
+	
+$(".icon-weixin").click(function(){
+	$(this).css("background-image","url(images/icon-weixin-hover.png)");
+})
+
+</script>
+</body>
+</html>

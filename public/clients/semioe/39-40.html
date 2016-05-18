@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>医生列表-搜索结果</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();
+	var operatebar=$(".operate-bar").height();		
+	$(".main-con").css("height",map_height-topfix-bottomfix-operatebar);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper doctor-list-searchlist">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+        <input class="search-input top-left f-48" placeholder="北京军区总医院" value="" /> 
+        <a href="38.html" class="oper-tit color-439bd0">取消</a>               
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-gray-fdfdfd">
+	
+	<h2 class="lable-tit f-48">搜索结果</h2>
+	<!--医生列表start-->
+	<div class="con-row flex-tab bg-gray-fdfdfd" id="f1">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">科瑞恩</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">颌面外科 | 主任医师</h2>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab bg-gray-f9f9f9">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo2.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">安德里亚</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">头颈外科 | 主治医师</h2>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab bg-gray-fdfdfd">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">科瑞恩</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">颌面外科 | 主任医师</h2>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab bg-gray-f9f9f9">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo2.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">安德里亚</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">头颈外科 | 主治医师</h2>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab bg-gray-fdfdfd">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">科瑞恩</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">颌面外科 | 主任医师</h2>
+		</div>
+	</div>
+	
+	<div class="con-row flex-tab bg-gray-f9f9f9">
+		<div class="flex-tab-cell wd-280 ht-300  pd-40">
+			<img class="left-photo" src="images/doctor-photo2.jpg"/>
+		</div>
+		<div class="flex-tab-cell">
+			<h1 class="first-tit f-48">安德里亚</h1>
+			<h2 class="sec-tit f-42">北京军区总医院</h2>
+			<h2 class="sec-tit f-42">头颈外科 | 主治医师</h2>
+		</div>
+	</div>
+	
+
+	<!--医生列表end-->
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	})
+})
+
+$("#f1").click(function(){
+	location.href="45-46.html"
+})
+</script>
+</body>
+</html>

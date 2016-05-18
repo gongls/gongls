@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>基本信息-编辑</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();
+	var photobar=$(".photo-bar").height();	
+	var tabhd=$("ul.tab-hd").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix-photobar);
+	$("ul.tab-bd li").css("height",map_height-topfix-bottomfix-photobar-tabhd)
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper info-edit">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        
+        <a href="6-9.html" class="oper-tit">保存</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+<!--头像显示区域start-->
+<div class="photo-bar">
+	<div class="photo-con">
+		<img src="images/infoedit-photo.jpg"/>
+	</div>
+	
+</div>
+<!--头像显示区域end-->
+<!--主体内容-->
+<div class="main-con no-scroll bg-white">
+	<div class="tabs-wrap">
+		<div class="tab">
+			<ul class="tab-hd">
+				<li class="active f-48">必填信息</li>
+				<li class="f-48">选填信息</li>
+			</ul>
+			<ul class="tab-bd">
+				<li class="thisclass">
+					<!--必填信息start-->
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-xm"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+							<input class="normal-input f-48"  type="" name="" id="" value="詹姆斯" readonly="true" />
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-shj"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+							<input class="normal-input f-60"  type="" name="" id="" value="18301035097" readonly="true" />
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-sfzh"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+							<input class="normal-input f-60"  type="" name="" id="" value="230826199104280645" readonly="true" />
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-jj"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+							<input class="normal-input f-48"  type="" name="" id="" value="请添加紧急联系人"  />
+							<i class="edit-tip"></i>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-xb"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-48 bg-gray-fdfdfd">
+							<select class="normal-select">
+				                <option value="1">选择性别</option>
+				                <option value="2">男</option>
+				                <option value="3">女</option>
+				            </select>
+							<i class="edit-tip"></i>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-shg"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-60 bg-gray-f9f9f9">
+							<select class="normal-select">
+				                <option value="1">150CM</option>
+				                <option value="2">155CM</option>
+				                <option value="3">160CM</option>
+				                <option value="4">165CM</option>
+				                <option value="5" selected="selected">170CM</option>
+				                <option value="6">175CM</option>
+				                <option value="7">180CM</option>
+				                <option value="8">185CM</option>
+				            </select>
+							<i class="edit-tip"></i>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-tzh"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-48 bg-gray-fdfdfd">
+							<select class="normal-select">
+				                <option value="1">体重</option>
+				                <option value="2">30kg以下</option>
+				                <option value="3">30-50kg</option>
+				                <option value="4">50-70kg</option>
+				                <option value="5">70-90kg</option>
+				                <option value="6">100kg以上</option>
+				            </select>
+							<i class="edit-tip"></i>
+						</div>
+					</div>
+					<!--必填信息end-->
+				</li>
+				<li>
+					<!--选填信息start-->
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-gr"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+							<a class="disblock" href="12.html">
+								<em class="text-tip f-60 color-f48c5f">2</em>
+								<div class="normal-input f-48">
+									个人疾病史
+								</div>	
+							</a>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-jz"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+							<a class="disblock" href="">
+								<em class="text-tip f-60 color-f48c5f">1</em>
+								<div class="normal-input f-48">
+									家族疾病史
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-shh"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+							<a class="disblock" href="14.html">
+								<em class="text-tip f-60 color-f48c5f">0%</em>
+								<div class="normal-input f-48">
+									社会关系
+								</div>	
+							</a>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-xg"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-48 bg-gray-f9f9f9">
+							<a class="disblock" href="15.html">
+								<em class="text-tip f-60 color-f48c5f">85%</em>
+								<div class="normal-input f-48">
+									生活习惯
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-zhy"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-60 bg-gray-fdfdfd">
+							<a class="disblock" href="">
+								<em class="text-tip f-60 color-f48c5f">100%</em>
+								<div class="normal-input f-48">
+									职业习惯
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-7bc7c3">
+							<i class="edit-icon edit-icon-ysh"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-60 bg-gray-f9f9f9">
+							<a class="disblock" href="17-18.html">
+								<em class="text-tip f-60 color-f48c5f">75%</em>
+								<div class="normal-input f-48">
+									饮食记录
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="con-row flex-tab">
+						<div class="wd-220 flex-tab-cell bg-green-62bbb7">
+							<i class="edit-icon edit-icon-yy"></i>
+						</div>
+						<div class="pd-40 flex-tab-cell f-60 bg-gray-fdfdfd">
+							<a class="disblock" href="23.html">
+								<em class="text-tip f-60 color-f48c5f">45%</em>
+								<div class="normal-input f-48">
+									用药记录
+								</div>
+							</a>
+						</div>
+					</div>
+					<!--选填信息end-->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/common.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	})
+})
+</script>
+</body>
+</html>

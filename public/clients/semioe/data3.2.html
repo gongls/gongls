@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="width=device-width, initial-scale=0.4, maximum-scale=0.4, user-scalable=no" name="viewport" />
+<meta charset="UTF-8">
+	<title>高血压</title>
+<link rel="stylesheet" href="css/data3.2.css" />
+</head>
+<style>
+.baocun :active{
+	background-color: #3389bc;
+}
+</style>
+<body>
+<div class="">
+	<div class="top">
+		<p>高血压</p>
+		<div class="top_img">
+			<img src="img/data31-1.png" id="img1">
+		</div>
+	</div>
+	
+	<div class="content">
+		
+		<div class="mengban" style="top: 180px;display: none;" id="one_1"></div>
+		
+		<div class="content_body" id="one">
+			<div class="content_left content_left_lv">
+				<p>高压</p>
+			</div>
+			<div class="content_right content_right_lv">
+				<span style="">140</span><a>mmHg</a>
+			</div>
+		</div>
+		
+		<div class="mengban" style="top: 400px;display: none;"></div>
+		
+		<div class="content_body">
+			<div class="content_left content_left_hui">
+				<p>低压</p>
+			</div>
+			<div class="content_right content_right_hui">
+				<a>mmHg</a>
+			</div>
+		</div>
+		
+		<div class="mengban" style="top: 620px;display: none;"></div>
+		
+		
+		<div class="content_body ">
+			<div class="content_left content_left_lv">
+				<p>脉搏</p>
+			</div>
+			<div class="content_right content_right_lv">
+				<a>次 / 分</a>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="baocun" >
+		<p >保存</p>
+	</div>
+	
+	<div class="footer">
+		<img src="img/data3-5.png" class="footer_img"/>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script>
+$("#one").click(function(){
+	$("#one_1").show();
+})
+
+$(".baocun").click(function(){
+	location.href="data3.3.html";
+})
+</script>

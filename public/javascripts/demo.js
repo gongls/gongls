@@ -1,6 +1,33 @@
 $(document).ready(function(){
-	var json=[{"name":"神经病","time_points":[{"time":"2016-05-03","value":3,"unit":""},{"time":"2016-05-06","value":30,"unit":""},{"time":"2016-05-09","value":6,"unit":""},{"time":"2016-05-19","value":18,"unit":""}]},{"name":"自闭症","time_points":[{"time":"2016-05-01","value":1,"unit":""},{"time":"2016-05-06","value":5,"unit":""},{"time":"2016-05-09","value":16,"unit":""}]}];
+	var json=[
+		{
+			"name":"神经病",
+			"time_points":[
+				{
+					"time":"2016-05-23",
+					"value":3,
+					"unit":""
+				},
+				{
+					"time":"2016-05-06",
+					"value":30,
+					"unit":""
+				},
+				{
+					"time":"2016-05-09",
+					"value":6,
+					"unit":""
+				},
+				{
+					"time":"2016-05-19",
+					"value":18,
+					"unit":""
+				}
+			]
+		},
+	{"name":"自闭症","time_points":[{"time":"2016-05-01","value":1,"unit":""},{"time":"2016-05-06","value":5,"unit":""},{"time":"2016-05-09","value":16,"unit":""}]}];
 	var timeline = Vue.extend({
+		
 		template: '<div class="btns">'+
 			  '<button @click="draw()">全部</button>'+
 			  '<button v-for="line in json" @click="draw_line(line)">{{line.name}}</button>'+
@@ -45,10 +72,12 @@ $(document).ready(function(){
 		                   timeline.clear();
 		                   //设置画布背景色
 		                   timeline.set_bgcolor("#fff");
-		                   //绘制坐标
-		                   timeline.coordinate('2016-05-01','2016-05-30',3);
+		                   
 		                   //绘制线
-		                   timeline.drawlines(this.json);
+		                   timeline.setlines(this.json);
+		                   //绘制坐标
+		                   timeline.coordinate(timeline.begin_time,timeline.end_time,3);
+		                   timeline.drawlines();
 		                   //绘制症状区域
 		                   timeline.text_areas([
     {
@@ -108,6 +137,64 @@ $(document).ready(function(){
 		    }
 		  }
 	});
+	var undersore = Vue.extend({
+		template: '<div class="form-group">'+
+				'<p>{{ outarrString }}</p>'+
+				'<textarea maxlength="20" class="form-control" v-model="inarrString"></textarea>'+
+				'<button @click="doit" class="btn btn-raised btn-info">ok</button>'+
+			    '</div>',
+		data: function () {
+	                return { 
+	                	message: 'hello' ,
+	                	json:[
+	                		{
+	                			name:"a",
+	                			time_points:[
+	                				{name:"a",value:1,time:'2015-12-02'},
+	                				{name:"b",value:3,time:'2015-05-06'},
+	                				{name:"c",value:2,time:'2016-01-01'}
+	                			]
+	                		},
+	                		{
+	                			name:"b",
+	                			time_points:[
+	                				{name:"a",value:1,time:'2015-12-02'},
+	                				{name:"b",value:3,time:'2015-05-06'},
+	                				{name:"c",value:2,time:'2014-01-01'}
+	                			]
+	                		},
+	                		
+	                	],
+	                	inarrString:'',
+	                	outarrString:''
+
+	            	   }
+	              },
+	              methods: {
+	                doit: function () {
+	                  this.json= JSON.parse(this.inarrString);
+	                  this.json.map(function(obj,index,objs){
+	                  	obj.time_points.sort(function(a,b){
+			          return Date.parse(a.time) - Date.parse(b.time);//时间正序
+			});
+	                  	//objs[index]=obj;
+	                  });
+	                  this.outarrString=JSON.stringify(this.json);
+	                }
+	              },
+	             watch: {
+		    message(val,oldVal) {
+		      console.log(val,oldVal);
+		      if(val.length>20){
+		      	this.msg='!'
+		      }
+		    }
+		},
+		ready:function(){
+
+			this.inarrString=JSON.stringify(this.json);
+		}
+	});
 	var App = Vue.extend({})
 	var router = new VueRouter()
 	router.map({
@@ -140,6 +227,9 @@ $(document).ready(function(){
 	    },
 	    '/timeline': {
 	        component: timeline
+	    },
+	    '/undersore':{
+	    	component:undersore
 	    }
 	})
 	router.start(App, '#content');

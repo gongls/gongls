@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="target-densitydpi=device-dpi,width=1080">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<title>个人疾病史_添加</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/layer.css">
+<script type="text/javascript">
+window.onload=function() {
+    initLayout();
+    $(window).resize(function(){
+        initLayout();
+    });
+};
+
+function initLayout() {
+	var map_height=$(document).height();//获取页面可见高度
+	var topfix=$(".top-fix").height();
+	var bottomfix=$(".bottom-fix").height();	
+	$(".main-con").css("height",map_height-topfix-bottomfix);
+}
+</script>
+
+</head>
+<body>
+<div class="app-wrapper med-history-add">
+<!--顶部标题操作栏start-->
+<div class="top-fix">
+    <div class="header-wrapper">
+		<a href="javascript:history.back();" class="back"></a>
+        <h1 class="main-tit">个人疾病史</h1> 
+        <a href="12.html" class="oper-tit">保存</a>             
+    </div>
+</div>
+<!--顶部标题操作栏end-->	
+
+<!--主体内容-->
+<div class="main-con bg-gray-fdfdfd">
+	<!--常用标签start-->
+	<div class="cybq-con">
+		<h2 class="lable-tit f-48">常用标签</h2>
+		<div class="flexrow clearfix">
+			<div class="flexcol-3">
+				<a class="f-42" href="">高血压</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">糖尿病</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">心脏病</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42 lable-active" href="">脑梗</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">脑出血</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">癌症</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">过敏性疾病</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">癫痫症</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">哮喘病</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">白癜风</a>
+			</div>
+			<div class="flexcol-3">
+				<a class="f-42" href="">近视</a>
+			</div>
+		</div>
+	</div>
+	<!--常用标签end-->
+	
+	<!--新增疾病史start-->
+	<div class="xzbs-con">
+		<h2 class="lable-tit f-48">新增疾病史</h2>	
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-7bc7c3">
+				<i class="left-icon left-icon-medhis"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-fdfdfd">
+				<input class="normal-input f-42" type="" name="" id="" placeholder="请输入疾病史" value=""  />
+				<i class="edit-tip"></i>
+			</div>
+		</div>
+		<div class="con-row flex-tab">
+			<div class="wd-180 ht-220 flex-tab-cell bg-green-d1e5e4">
+				<i class="left-icon left-icon-edit"></i>
+			</div>
+			<div class="pd-40 flex-tab-cell bg-gray-f9f9f9">
+				<textarea  autoHeight="true" class="normal-textarea f-42" placeholder="请简要描述个人病史（不超过60字）" value="" ></textarea>	
+				<i class="edit-tip"></i>
+			</div>
+		</div>
+	</div>
+	<!--新增疾病史end-->
+
+</div>
+<!--主体内容end-->
+<!--底部导航-->
+<div class="bottom-fix">
+	<div class="bottom-wrapper">
+		<a href="javascript:void(0)"><i></i></a>
+	</div>
+</div>
+<!--底部导航end-->
+</div><!--app-wrapper-->
+
+
+
+<!--主导航界面作为弹出层-->
+
+<div class="index-nav flexrow clearfix hidden">
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon01"></i>
+				</em>
+				<span class="f-36">基本信息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon02"></i>
+				</em>
+				<span class="f-36">过敏源</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon03"></i>
+				</em>
+				<span class="f-36">监测数据</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon04"></i>
+					<div class="tip_small f-36">1</div>
+				</em>
+				<span class="f-36">医生列表</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon05"></i>
+					<div class="tip_small f-36">2</div>
+				</em>
+				<span class="f-36">消息</span>				
+			</a>
+		</div>
+		<div class="flexcol-3">
+			<a href="">
+				<em>
+					<i class="main-icon06"></i>
+				</em>
+				<span class="f-36">设置</span>				
+			</a>
+		</div>
+</div>
+<!--主导航界面作为弹出层-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/prefixfree-1.0.7.js"></script>
+<script src="js/metahandler.js"></script>
+<script src="js/common.js"></script>
+<script src="js/layer.js"></script>
+<script>
+$(function () {
+	$(".bottom-fix a").click(function () {
+		layer.open({
+		  type: 1,
+		  title: false,
+		  closeBtn: 0,
+		  shade: 0.6,
+		  area: '100%',
+		  offset: 'rb',
+		  skin: 'layui-layer-nobg', //没有背景色
+		  shadeClose: true,
+		  shift:2,
+		  content: $('.index-nav')
+		});
+	})
+})
+</script>
+</body>
+</html>
