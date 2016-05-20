@@ -111,6 +111,22 @@ $(document).ready(function(){
 			this.draw();
 		}
 	});
+	var hello = Vue.extend({
+	    template: '<p>{{name}}</p>',
+	    data:function(){
+	      return {
+	        name:"tom"
+	      }
+	    },
+	    methods: {
+
+	    },
+	    ready(){
+	      var $route=this.$route;
+	      console.log('id:',$route.params.name);
+	      this.$set('name',$route.params.name);
+	    }
+	});
 	var check = Vue.extend({
 		template: '<div class="form-group">'+
 				'<p @click="doSomething">{{ message.length }}/20 {{msg}}</p>'+
@@ -230,6 +246,9 @@ $(document).ready(function(){
 	    },
 	    '/undersore':{
 	    	component:undersore
+	    },
+	    '/hello/:name':{
+	    	component:hello
 	    }
 	})
 	router.start(App, '#content');
