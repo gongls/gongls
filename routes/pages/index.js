@@ -18,12 +18,6 @@ router.use('/robot', robot);
 router.get('/', function(req, res, next) {
   res.render('home',{title:'我喜欢的一切',subTitle:'愿一切喜欢的都在一起',js:'clean-blog'});
 });
-router.get('/contact', function(req, res, next) {
-  res.render('contact',{title:'我喜欢的一切',subTitle:'愿一切喜欢的都在一起',js:'clean-blog'});
-});
-router.get('/post', function(req, res, next) {
-  res.render('post',{title:'我喜欢的一切',subTitle:'愿一切喜欢的都在一起',js:'clean-blog'});
-});
 router.get('/login', function(req, res, next) {
   res.render('login',{title:'login',js:'login'});
 });

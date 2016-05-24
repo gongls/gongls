@@ -9,23 +9,21 @@ block content
       .container-fluid
         // Brand and toggle get grouped for better mobile display
         .navbar-header.page-scroll
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          button#nav_btn.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='/') zhangmani
+          a.navbar-brand(v-link="{ path: '/' }") zhangmani
         // Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        #navbar-collapse.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href='/') Home
-            li
-              a(href='/about') About
-            li
-              a(href='/post') Sample Post
-            li
-              a(href='/contact') Contact
+            li.nav_menu
+              a(v-link="{ path: '/' }") Home
+            li.nav_menu
+              a(v-link="{ path: '/about' }") About
+            li.nav_menu
+              a(v-link="{ path: '/contact' }") Contact
         // /.navbar-collapse
       // /.container
     // Main Content
@@ -54,3 +52,5 @@ block content
                     i.fa.fa-github.fa-stack-1x.fa-inverse
             p.copyright.text-muted Copyright &copy; www.zhangmani.com 2016 
             p.copyright.text-muted 京ICP备16001206号-3
+            p.copyright.text-muted
+              a(href='/mp') login
