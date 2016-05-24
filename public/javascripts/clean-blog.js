@@ -45,7 +45,11 @@ var home = Vue.extend({
     }
 });
 var about = Vue.extend({
-    template: '<header class="intro-header" style="background-image: url(/public/img/about-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>About Me</h1><hr class="small"><span class="subheading">This is what I do.</span></div></div></div></div></header><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p></div></div></div>',
+    template: '<header class="intro-header" style="background-image: url(/public/img/about-bg.jpg)">'+
+    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>About Me</h1><hr class="small"><span class="subheading">This is what I do.</span></div></div></div></div></header>'+
+    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">'+
+    '<h3 本站使用如下技术</h3><p>服务器：ubuntu server </p><p>基于 on node.js 技术构建  </p> <p>使用了如下技术：        </p><p>1) 后端框架：express</p><p> 2) 数据库：mongodb </p>       <p>3) 模板引擎：pug ( 原名jade )         </p><p>4) 前端路由：vue-router     </p><p>5) 前端框架：vue.js / jquery.js</p><p>6) UI/style：bootstrap / bootstrap-material-design</p>'+
+    '</div></div></div>',
     data:function(){
       return {
         name:'about'
