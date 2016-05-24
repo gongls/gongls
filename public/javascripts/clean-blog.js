@@ -78,7 +78,6 @@ var post = Vue.extend({
       }
     },
     ready:function(){
-      hideNav();
     }
 });
 var App = Vue.extend({});
