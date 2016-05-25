@@ -8,7 +8,7 @@ new Vue({
     	var name=this.name;
     	var pass=this.pass;
     	var _self=this;
-    	_self.message=' err !';
+    	_self.message=this.return_url;
     	$.post('/api/user/login',{name:name,pass:pass},function(x){
     		console.log(x);
     		if(x.err){
