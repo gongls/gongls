@@ -48,7 +48,7 @@ var about = Vue.extend({
     template: '<header class="intro-header" style="background-image: url(/public/img/about-bg.jpg)">'+
     '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>About Me</h1><hr class="small"><span class="subheading">This is what I do.</span></div></div></div></div></header>'+
     '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">'+
-    '<h3 本站使用如下技术</h3><p>服务器：ubuntu server </p><p>基于 on node.js 技术构建  </p> <p>使用了如下技术：        </p><p>1) 后端框架：express</p><p> 2) 数据库：mongodb </p>       <p>3) 模板引擎：pug ( 原名jade )         </p><p>4) 前端路由：vue-router     </p><p>5) 前端框架：vue.js / jquery.js</p><p>6) UI/style：bootstrap / bootstrap-material-design</p>'+
+    '<h3>本站使用如下技术</h3><p>服务器：ubuntu server </p><p>基于 on node.js 技术构建  </p> <p>使用了如下技术：        </p><p>1) 后端框架：express</p><p> 2) 数据库：mongodb </p>       <p>3) 模板引擎：pug ( 原名jade )         </p><p>4) 前端路由：vue-router     </p><p>5) 前端框架：vue.js / jquery.js</p><p>6) UI/style：bootstrap / bootstrap-material-design</p>'+
     '</div></div></div>',
     data:function(){
       return {
@@ -71,6 +71,7 @@ var contact = Vue.extend({
     }
 });
 var post = Vue.extend({
+    
     template: '<header class="intro-header" style="background-image: url(/public/img/post-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="post-heading"><h1>Man must explore, and this is exploration at its greatest</h1><h2 class="subheading">Problems look mighty small from 150 miles up</h2><span class="meta">Posted by<a href="#">Start Bootstrap</a> on August 24, 2014</span></div></div></div></div></header><article><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>ppp</p><h2 class="section-heading">The Final Frontier</h2><p>pppp</p><blockquote>hehe</blockquote><h2 class="section-heading">Reaching for the Stars</h2><p>ppp</p><a href="#"><img class="img-responsive" src="/public/img/post-sample-image.jpg" alt=""></a><p>Placeholder text by<a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by<a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p></div></div></div></article>',
     data:function(){
       return {
@@ -78,6 +79,8 @@ var post = Vue.extend({
       }
     },
     ready:function(){
+      var $route=this.$route;
+      var id=$route.params.id;
     }
 });
 var App = Vue.extend({});
