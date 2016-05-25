@@ -6,16 +6,18 @@ block content
           .login-panel.panel.panel-default
             .panel-heading
               h3.panel-title Please Sign In
-            .panel-body
-              form(role='form')
+            .panel-body#login
                 fieldset
                   .form-group
-                    input.form-control(placeholder='E-mail', name='email', type='email', autofocus='')
+                    p {{message}}
+                    input(v-model="return_url",type="hidden",vale="#{return_url}")
                   .form-group
-                    input.form-control(placeholder='Password', name='password', type='password', value='')
+                    input.form-control(v-model="name",placeholder='UserName', name='name', type='text', autofocus='')
+                  .form-group
+                    input.form-control(v-model="pass",placeholder='PassWord', name='password', type='password', value='')
                   .checkbox
                     label
                       input(name='remember', type='checkbox', value='Remember Me')
                       span Remember Me
                   // Change this to a button or input when using this as a form
-                  a.btn.btn-lg.btn-success.btn-block(href='index.html') Login
+                  button.btn.btn-lg.btn-success.btn-block(v-on:click="login") Login
