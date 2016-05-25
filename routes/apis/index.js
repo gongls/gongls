@@ -3,11 +3,13 @@ var router = express.Router();
 var blog = require('./blog');
 var img = require('./img');
 var user = require('./user');
+var post = require('./post');
 //const auth = require('../../middleware/auth').auth;
 
 router.use('/blog', blog);
 router.use('/img', img);
 router.use('/user', user);
+router.use('/post', post);
 //router.use('/disease', auth, disease);
 router.get('/', function(req, res, next) {
   res.send(req.body);

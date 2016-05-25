@@ -34,14 +34,33 @@ jQuery(document).ready(function($) {
 });
 var home = Vue.extend({
     template: '<header class="intro-header" style="background-image: url(/public/img/home-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="site-heading"><h1>Clean Blog</h1><hr class="small"><span class="subheading">A Clean Blog Theme by Start Bootstrap</span></div></div></div></div></header> '+
-    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="post-preview"><a href="post.html"><h2 class="post-title">                            Man must explore, and this is exploration at its greatest</h2><h3 class="post-subtitle">                            Problems look mighty small from 150 miles up</h3></a><p class="post-meta">Posted by<a href="#">Start Bootstrap</a> on September 24, 2014</p></div><hr><ul class="pager"><li class="next"><a href="#">Older Posts &rarr;</a></li></ul></div></div></div>',
+    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">'+
+    '<div v-for="post in posts" class="post-preview"><a v-link="\'/post/\'+post._id"><h2 class="post-title">{{post.title}}</h2><h3 class="post-subtitle">{{post.blockquote}}</h3></a><p class="post-meta">Posted by<a>{{post.name}}</a>{{post.time}}</p></div>'+
+    '<hr><ul class="pager"><li class="next"><a href="#">Older Posts &rarr;</a></li></ul></div></div></div>',
     data:function(){
       return {
-        name:'home'
+        name:'home',
+        posts:[]
       }
     },
     ready:function(){
+      var _self=this;
+      $.ajax({
+           type: "GET",
+           url: "/api/post",
+           data:_self.post,
+           dataType: "json",
+           success: function(data){
+             if(data.err){
 
+             }else{
+               //console.log(data.id);
+               //router.go('/list');
+               console.log(data);
+               _self.posts=data.result;
+             }
+           }
+       });
     }
 });
 var about = Vue.extend({
@@ -71,16 +90,35 @@ var contact = Vue.extend({
     }
 });
 var post = Vue.extend({
-    
-    template: '<header class="intro-header" style="background-image: url(/public/img/post-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="post-heading"><h1>Man must explore, and this is exploration at its greatest</h1><h2 class="subheading">Problems look mighty small from 150 miles up</h2><span class="meta">Posted by<a href="#">Start Bootstrap</a> on August 24, 2014</span></div></div></div></div></header><article><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>ppp</p><h2 class="section-heading">The Final Frontier</h2><p>pppp</p><blockquote>hehe</blockquote><h2 class="section-heading">Reaching for the Stars</h2><p>ppp</p><a href="#"><img class="img-responsive" src="/public/img/post-sample-image.jpg" alt=""></a><p>Placeholder text by<a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by<a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p></div></div></div></article>',
+
+    template: '<header class="intro-header" style="background-image: url(/public/img/post-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="post-heading"><h1>{{post.title}}</h1><h2 class="subheading"></h2><span class="meta">Posted by <a>{{post.author}}</a>{{post.time}}</span></div></div></div></div></header><article><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><h2 class="section-heading">{{post.title}}</h2><blockquote>{{post.blockquote}}</blockquote>{{post.textarea}}</div></div></div></article>',
     data:function(){
       return {
-        name:'post'
+        post:null
       }
     },
     ready:function(){
       var $route=this.$route;
       var id=$route.params.id;
+      //
+      var _self=this;
+      $.ajax({
+           type: "GET",
+           url: "/api/post/"+id,
+           data:{},
+           dataType: "json",
+           success: function(data){
+             if(data.err){
+
+             }else{
+               //console.log(data.id);
+               //router.go('/list');
+               console.log(data);
+               _self.post=data.result;
+             }
+           }
+       });
+      //
     }
 });
 var App = Vue.extend({});
