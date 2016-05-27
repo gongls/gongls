@@ -163,4 +163,3 @@ var router = new VueRouter()
       }
   })
   router.start(App, '#content');
-  router.go('/');
