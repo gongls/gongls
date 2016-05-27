@@ -132,7 +132,14 @@ var post = Vue.extend({
                //console.log(data.id);
                //router.go('/list');
                console.log(data);
-               _self.post=data.result;
+               //
+              var post=data.result;
+              var time=post.time;
+              time=(new Date(time)).toLocaleDateString();
+              time=time.replace('Invalid Date','');
+              post.time=time;
+               //
+               _self.post=post;
              }
            }
        });
