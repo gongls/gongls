@@ -41,7 +41,7 @@ var home = Vue.extend({
       return {
         name:'home',
         blog:{
-          title:'张玛妮'
+          title:'张玛妮',
           subTitle:'我只是一个美少女画家'
         },
         posts:[],
