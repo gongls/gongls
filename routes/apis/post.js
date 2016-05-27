@@ -29,6 +29,35 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/page/:page', function(req, res, next) {
+  var page=req.params.page;
+  page=parseInt(page);
+  var OlderPage=page+1;
+  if(page<2){
+    page=1;
+  }
+
+
+
+  var onePageCount=10;
+  var skip=(page-1)*onePageCount;
+
+
+  db.find('posts',{},{
+    sort:{
+      _id:-1
+    },
+    limit:onePageCount,
+    skip:skip
+  },function(result){
+    res.json({
+      err:false,
+      OlderPage:OlderPage,
+      result:result
+    });
+  });
+});
+
 router.get('/:id', function(req, res, next) {
 	var id=req.params.id;
   db.read('posts',{'_id':ObjectId(id)},function(result){

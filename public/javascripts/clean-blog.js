@@ -35,19 +35,20 @@ jQuery(document).ready(function($) {
 var home = Vue.extend({
     template: '<header class="intro-header" style="background-image: url(/public/img/home-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="site-heading"><h1>Clean Blog</h1><hr class="small"><span class="subheading">A Clean Blog Theme by Start Bootstrap</span></div></div></div></div></header> '+
     '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">'+
-    '<div v-for="post in posts" class="post-preview"><a v-link="\'/post/\'+post._id"><h2 class="post-title">{{post.title}}</h2><h3 class="post-subtitle">{{post.blockquote}}</h3></a><p class="post-meta">Posted by<a>{{post.name}}</a>{{post.time}}</p></div>'+
-    '<hr><ul class="pager"><li class="next"><a href="#">Older Posts &rarr;</a></li></ul></div></div></div>',
+    '<div v-for="post in posts" class="post-preview"><a v-link="\'/post/\'+post._id"><h2 class="post-title">{{post.title}}</h2><h3 class="post-subtitle">{{post.blockquote}}</h3></a><p class="post-meta">Posted by <a>{{post.author}}</a> {{post.time}}</p></div>'+
+    '<hr><ul class="pager"><li class="next"><a v-link="\'/page/\'+OlderPage">Older Posts &rarr;</a></li></ul></div></div></div>',
     data:function(){
       return {
         name:'home',
-        posts:[]
+        posts:[],
+        OlderPage:0
       }
     },
     ready:function(){
       var _self=this;
       $.ajax({
            type: "GET",
-           url: "/api/post",
+           url: "/api/post/page/0",
            data:_self.post,
            dataType: "json",
            success: function(data){
@@ -57,7 +58,20 @@ var home = Vue.extend({
                //console.log(data.id);
                //router.go('/list');
                console.log(data);
-               _self.posts=data.result;
+               var posts=data.result;
+               posts.map(function(post){
+                 var author=post.author;
+                 if(author===undefined){
+                   author="unknow";
+                   post.author=author;
+                 }
+                 var time=post.time;
+                 time=(new Date(time)).toLocaleDateString();
+                 time=time.replace('Invalid Date','');
+                 post.time=time;
+               });
+               _self.posts=posts;
+               _self.OlderPage=data.OlderPage;
              }
            }
        });
