@@ -83,9 +83,9 @@ var home = Vue.extend({
 });
 var about = Vue.extend({
     template: '<header class="intro-header" style="background-image: url(/public/img/about-bg.jpg)">'+
-    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>About Me</h1><hr class="small"><span class="subheading">This is what I do.</span></div></div></div></div></header>'+
+    '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>About Me</h1><hr class="small"><span class="subheading">新浪微博 @张玛妮</span></div></div></div></div></header>'+
     '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">'+
-    '<h3>本站使用如下技术</h3><p>服务器：ubuntu server </p><p>基于 on node.js 技术构建  </p> <p>使用了如下技术：        </p><p>1) 后端框架：express</p><p> 2) 数据库：mongodb </p>       <p>3) 模板引擎：pug ( 原名jade )         </p><p>4) 前端路由：vue-router     </p><p>5) 前端框架：vue.js / jquery.js</p><p>6) UI/style：bootstrap / bootstrap-material-design</p>'+
+    '<h3>本站使用如下技术</h3><p>服务器：ubuntu server </p><p>基于 on node.js 技术构建  </p> <p>使用了如下技术：        </p><p>1) 后端框架：express</p><p> 2) 数据库：mongodb </p>       <p>3) 模板引擎：pug ( 原名jade )         </p><p>4) 前端路由：vue-router     </p><p>5) 前端框架：vue.js / jquery.js</p><p>6) UI/style：bootstrap / bootstrap-material-design</p><p>新浪微博 @张玛妮</p>'+
     '</div></div></div>',
     data:function(){
       return {
@@ -97,7 +97,7 @@ var about = Vue.extend({
     }
 });
 var contact = Vue.extend({
-    template: '<header class="intro-header" style="background-image: url(public/img/contact-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>Contact Me</h1><hr class="small"><span class="subheading">Have questions? I have answers (maybe).</span></div></div></div></div></header><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p></div></div></div>',
+    template: '<header class="intro-header" style="background-image: url(public/img/contact-bg.jpg)"><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class="page-heading"><h1>Contact Me</h1><hr class="small"><span class="subheading">新浪微博 @张玛妮</span></div></div></div></div></header><div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p></div></div></div>',
     data:function(){
       return {
         name:'contact'
