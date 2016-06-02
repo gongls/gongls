@@ -1,0 +1,6 @@
+extends ../layout.pug
+block content
+  div#jsoneditor(style="width: 400px; height: 400px;")
+  textarea#json {{jsonStr}}
+  link(href='/bower_components/jsoneditor/dist/jsoneditor.min.css',rel='stylesheet',type='text/css')
+  script(src='/bower_components/jsoneditor/dist/jsoneditor.min.js')

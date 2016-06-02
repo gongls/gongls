@@ -23,6 +23,7 @@
     "underscore": "^1.8.3",
     "particleground": "*",
     "metisMenu": "^2.5.2",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "jsoneditor": "^5.5.5"
   }
 }

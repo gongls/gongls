@@ -30,6 +30,10 @@ router.get('/logout', function(req, res, next) {
 router.get('/mp', auth.page,function(req, res, next) {
   res.render('mp/index',{title:'mp',js:'mp'});
 });
+
+router.get('/tools/jsonEdit',function(req, res, next) {
+  res.render('tools/jsonEdit',{title:'jsonEdit',js:'tools/jsonEdit'});
+});
 //router.use('/disease', auth, disease);
 
 module.exports = router;
