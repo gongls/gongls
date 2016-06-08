@@ -53,7 +53,7 @@ var post = Vue.extend({
     '<div class="form-group"><input type="text" class="form-control" id="tags" v-model="post.tags" placeholder="tags"></div>'+
     '<div class="form-group"><label for="file">File</label><input type="file" id="file"></div>'+
     '<div class="form-group"><textarea class="form-control" rows="3" v-model="post.blockquote" placeholder="blockquote"></textarea></div>'+
-    '<div class="form-group"><textarea class="form-control" rows="10" v-model="post.textarea" placeholder="textarea"></textarea></div>'+
+    '<div class="form-group"><textarea class="form-control editable" rows="10" v-model="post.textarea" placeholder="textarea"></textarea></div>'+
     '<button type="submit" class="btn btn-default" @click="save">Post</button>',
     data:function(){
       return {
@@ -82,7 +82,45 @@ var post = Vue.extend({
       }
     },
     ready:function(){
-
+      var editor = new MediumEditor('.editable', {
+          /* These are the default options for the editor,
+              if nothing is passed this is what is used */
+          activeButtonClass: 'medium-editor-button-active',
+          allowMultiParagraphSelection: true,
+          buttonLabels: false,
+          contentWindow: window,
+          delay: 0,
+          disableReturn: false,
+          disableDoubleReturn: false,
+          disableExtraSpaces: false,
+          disableEditing: false,
+          elementsContainer: false,
+          extensions: {},
+          ownerDocument: document,
+          spellcheck: true,
+          targetBlank: false,
+          toolbar: {
+              buttons: ['bold', 'italic', 'quote','image','h1','h2','h3'],
+              diffLeft: 25,
+              diffTop: 10,
+          },
+          paste: {
+              cleanPastedHTML: true,
+              cleanAttrs: ['style', 'dir'],
+              cleanTags: ['label', 'meta']
+          },
+          anchor: {
+              placeholderText: 'Type a link',
+              customClassOption: 'btn',
+              customClassOptionText: 'Create Button'
+          },
+          anchorPreview: {
+              hideDelay: 300
+          },
+          placeholder: {
+              text: 'Click to edit'
+          }
+      });
     }
 });
 var edit = Vue.extend({
@@ -132,4 +170,3 @@ var router = new VueRouter()
       }
   })
   router.start(App, '#content');
-  router.go('/');

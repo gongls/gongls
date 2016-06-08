@@ -3,28 +3,32 @@ new Vue({
   data:function(){
     return {
       msg:'tom',
+      editor:null,
+      jsonStr:null,
       json:{
-          "Array": [1, 2, 3],
-          "Boolean": true,
-          "Null": null,
-          "Number": 123,
-          "Object": {"a": "b", "c": "d"},
-          "String": "Hello World"
+        
       }
     }
   },
+  methods:{
+    load:function(){
+      this.json=JSON.parse(this.jsonStr);
+      this.editor.set(this.json);
+    }
+  },
   computed: {
-    jsonStr: function () {
-      return JSON.stringify(this.json);
+    out:function(){
+      //this.json=JSON.parse(this.jsonStr);
+      //this.editor.set(this.json);
+      this.json=this.editor.get();
+      return JSON.stringify(this.json, null, 2);
     }
   },
   ready:function(){
     var container = document.getElementById("jsoneditor");
     var options = {};
-    var editor = new JSONEditor(container, options);
-    editor.set(this.json);
+    this.editor = new JSONEditor(container, options);
+    //this.json=JSON.parse(this.jsonStr);
+    this.editor.set(this.json);
   }
 });
-
-          // get json
-          //var json = editor.get();

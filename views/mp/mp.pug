@@ -1,6 +1,9 @@
 extends ../layout.pug
 block content
     #wrapper
+      script(src="/bower_components/medium-editor/dist/js/medium-editor.min.js")
+      link(rel="stylesheet",href="/bower_components/medium-editor/dist/css/medium-editor.css")
+      link(rel="stylesheet",href="/bower_components/medium-editor/dist/css/themes/default.css")
       // Navigation
       nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
         .navbar-header

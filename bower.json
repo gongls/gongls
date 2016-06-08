@@ -24,6 +24,7 @@
     "particleground": "*",
     "metisMenu": "^2.5.2",
     "font-awesome": "^4.6.3",
-    "jsoneditor": "^5.5.5"
+    "jsoneditor": "^5.5.5",
+    "medium-editor": "^5.20.0"
   }
 }
