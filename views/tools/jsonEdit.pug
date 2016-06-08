@@ -1,8 +1,22 @@
 extends ../layout.pug
 block content
-  div#jsoneditor(style="width: 400px; height: 400px;")
-  input(v-model="jsonStr")
-  button(@click="load") load jsonString
-  textarea {{out}}
+  link(href='/public/tools/jsonEdit.css', rel='stylesheet')
+  
+  div.full
+  
+    a.btn.btn-default(@click="UI_load") load
+    a.btn.btn-default(@click="UI_source") source
+    a.btn.btn-default(@click="download") loadload
+    
+    div#jsoneditor.edit
+
+  div.ui_load.full(style="display:{{display.ui_load}}")
+    textarea.edit(v-model="jsonStr")
+    a.btn.btn-default(@click="load") load
+    a.btn.btn-danger(@click="UI_load_close") close
+
+  div.ui_source.full(style="display:{{display.ui_source}}")
+    textarea.edit {{out}}
+    a.btn.btn-danger(@click="UI_close_source") close
   link(href='/bower_components/jsoneditor/dist/jsoneditor.min.css',rel='stylesheet',type='text/css')
   script(src='/bower_components/jsoneditor/dist/jsoneditor.min.js')
