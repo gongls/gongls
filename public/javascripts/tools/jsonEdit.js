@@ -10,8 +10,7 @@ new Vue({
       },
       display:{
         ui_load:'none',
-        ui_source:'none',
-        ui_edit:'block',
+        ui_source:'none'
       }
     }
   },
@@ -26,26 +25,33 @@ new Vue({
     download:function(){
 
     },
+    UI_show:function(name){
+      var _self=this;
+      setTimeout(function(){
+        _self.hide();
+        if(name===undefined){
+
+        }else{
+          _self.display[name]='block';
+        }
+      },500);
+    },
     UI_source:function () {
-      this.hide();
-      this.display.ui_source='block';
+      this.UI_show('ui_source');
     },
     UI_load_close:function(){
-      this.hide();
+      this.UI_show();
     },
     UI_close_source:function () {
-      this.hide();
-      this.display.ui_edit='block';
+      this.UI_show();
     },
     UI_load:function(){
-        this.hide();
-        this.display.ui_load='block';
+        this.UI_show('ui_load');
     },
     load:function(){
       this.json=JSON.parse(this.jsonStr);
       this.editor.set(this.json);
-      this.hide();
-      this.display.ui_edit='block';
+      this.UI_show('ui_edit');
     }
   },
   computed: {
